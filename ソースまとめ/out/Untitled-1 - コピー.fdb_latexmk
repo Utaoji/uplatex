@@ -1,13 +1,13 @@
 # Fdb version 4
-["dvipdf"] 1696216667 "out/Untitled-1.dvi" "out/Untitled-1.pdf" "out/Untitled-1" 1696216667 2
-  "out/Untitled-1.dvi" 1696216666 17032 7fce2610c4abc3420fcb18b532dae819 "latex"
+["dvipdf"] 1696215215 "out/Untitled-1 - コピー.dvi" "out/Untitled-1 - コピー.pdf" "out/Untitled-1 - コピー" 1696215219 0
+  "out/Untitled-1 - コピー.dvi" 1696215215 9396 15bcfc4805af1e62b061a5452930dea2 "latex"
   (generated)
-  "out/Untitled-1.pdf"
+  "out/Untitled-1 - コピー.pdf"
   (rewritten before read)
-["latex"] 1696216656 "c:/Users/masa-.LAVIE/Documents/LaTeX資料/Untitled-1.tex" "out/Untitled-1.dvi" "Untitled-1" 1696216669 0
+["latex"] 1696215206 "c:/Users/masa-.LAVIE/Documents/LaTeX資料/Untitled-1 - コピー.tex" "out/Untitled-1 - コピー.dvi" "Untitled-1 - コピー" 1696215219 0
   "Setting.png" 1696106827 95312 3f8946184fbb8a39b84ebf49d9ed6090 ""
-  "Untitled-1.tex" 1696216654 7958 a53b63423213a9c360b844404709b541 ""
-  "c:/Users/masa-.LAVIE/Documents/LaTeX資料/Untitled-1.tex" 1696216654 7958 a53b63423213a9c360b844404709b541 ""
+  "Untitled-1 - コピー.tex" 1696215206 4294 8ee323cce450690aacb295d67728c60a ""
+  "c:/Users/masa-.LAVIE/Documents/LaTeX資料/Untitled-1 - コピー.tex" 1696215206 4294 8ee323cce450690aacb295d67728c60a ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1672948256 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1672947884 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1672946605 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -211,12 +211,11 @@
   "c:/texlive/2022/texmf-var/web2c/euptex/uplatex.fmt" 1672952038 7833741 4c90f5208c24fa0f476c7beb286b250e ""
   "c:/texlive/2022/texmf.cnf" 1672951888 713 e69b156964470283e0530f5060668171 ""
   "kakutyou.png" 1696106107 36947 352c19335f6190ccdc906a9a2d6a1537 ""
-  "out/Untitled-1.aux" 1696216666 3450 3e539c9cd7328ccffdaa8ca417fcfcf8 "latex"
-  "out/Untitled-1.out" 1696216666 1923 952dfe0cf420cf1ae70a37c8d6442117 "latex"
-  "powershell.png" 1696108327 50516 1cc15b7f5ab1a9e8491b29e76c7e7f7c ""
+  "out/Untitled-1 - コピー.aux" 1696215215 1913 52f0153d692ff44618cbc5afd8343145 "latex"
+  "out/Untitled-1 - コピー.out" 1696215215 747 fc63913da9d70282e403a902c981676e "latex"
   (generated)
-  "out/Untitled-1.aux"
-  "out/Untitled-1.dvi"
-  "out/Untitled-1.log"
-  "out/Untitled-1.out"
+  "out/Untitled-1 - コピー.aux"
+  "out/Untitled-1 - コピー.dvi"
+  "out/Untitled-1 - コピー.log"
+  "out/Untitled-1 - コピー.out"
   (rewritten before read)

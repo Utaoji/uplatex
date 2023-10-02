@@ -16,7 +16,6 @@
 \usepackage[hang,small,bf]{caption}
 \usepackage[subrefformat=parens]{subcaption}
 \captionsetup{compatibility=false}
-\usepackage{hyperref}
 
 % 図形
 \usepackage{float}
@@ -27,6 +26,9 @@
 \newcommand{\Frac}[2]{\dfrac{\,#1\,}{\,#2\,}}
 \numberwithin{equation}{section}
 \setcounter{tocdepth}{3}
+
+\usepackage{hyperref}
+
 \begin{document}
 \title{\LaTeX の使い方} 
 \author{うたおじ}
@@ -62,30 +64,49 @@ texliveを利用します。（MacユーザーはMacTeXを利用）1,2時間は�
 
 スタートメニューを開き（winキーをクリック）、ターミナルを起動してください。できたら「latex -version」と打ち込みます。
 
-次ページ図のように出力されれば、正常にインストールできています。『～として認識されていません』などと出力された場合は……インストールできてないのでやり直しです。
+次ページ図\ref{fig:powershell} のように出力されれば、正常にインストールできています。『～として認識されていません』などと出力された場合は……インストールできてないのでやり直しです。
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\linewidth]{powershell.png}
+  \caption{ターミナル画面}
+  \label{fig:powershell}
 \end{figure}
-\subsection*{VSCodeのダウンロード}
+\subsection{VSCodeのダウンロード}
 \LaTeX にデフォで存在するエディタは不便極まりないので、プログラマーに大人気のVisual Studio Code（以下VSCode）を使いましょう。Windowsにデフォのメモ帳でもかけるっちゃかけるけどそんなことやってるやつ見たことないです。
 
 \href{https://code.visualstudio.com/download}{公式サイト}から、ダウンロードできます。
 
 上記リンクが機能しない場合は https://code.visualstudio.com/download で検索
-\subsection*{VSCodeの設定}
+\subsection{VSCodeの設定}
 \subsubsection{拡張機能の追加}
 まずは拡張機能を導入しましょう。導入するのは次の2つです。
 \begin{itemize}
   \item Japanese Language Pack for Visual Studio Code
   \item LaTeX Workshop
 \end{itemize}
-私の環境ではすでに色々入れてるのでアイコンがちょっと多いですが、次の画像のようにすればインストールできます。LaTeX Workshop についても同様に、latexと検索してインストールしてください。
+私の環境ではすでに色々入れてるのでアイコンがちょっと多いですが、次の図\ref{fig:kakutyou}のようにすればインストールできます。LaTeX Workshop についても同様に、latexと検索してインストールしてください。
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{kakutyou.png}
+  \caption{拡張機能追加}
+  \label{fig:kakutyou}
+\end{figure}
 \subsubsection{settings.jsonの編集}
 VSCodeの左下の歯車マークをクリックし、『設定』を開き、右上にある三点マークの2つ左にあるマークをクリックすると、settings.jsonがひらけます。
-\subsection*{latexmkの設定}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{Setting.png}
+  \caption{Settings.jsonの表示}
+  \label{fig:settings}
+\end{figure}
+
+できたら、\href{https://github.com/Utaoji/uplatex}{github}上においてあるsetting.jsonというファイルの中身をそのままコピペしてください。
+
+上記リンクが機能しない場合は https://github.com/Utaoji/uplatex で検索してください。
+\subsection{latexmkの設定}
 \LaTeX のソースをpdf化する際、コマンドをいくつか入力しなければなりません。が、面倒ですよね。というわけで自動化しましょう。
 
+windows向けですが、\href{https://github.com/Utaoji/uplatex}{github} から『Cドライブ>ユーザー>ユーザー名』の場所に『.latexmkrc』をコピーしてください。Macユーザーの場合も、latexがダウンロードされたフォルダに書くんじゃないかなぁ。。。
 \section{基本構造}
 \section{文章の書き方}
 ここでも簡易的には説明するものの、詳しくは自分で調べたり試行錯誤したりすることをおススメします。
@@ -95,7 +116,7 @@ VSCodeの左下の歯車マークをクリックし、『設定』を開き、�
   \item \href{http://hooktail.org/computer/index.php?TeX}{物理のかぎしっぽ}
   \item \href{https://texwiki.texjp.org/}{TeX Wiki}
   \item その他、Quiitaなどのブログサイト
-  \item \LaTeX を使ってる人に直接聞く（俺が暇な時であれば相談に乗ります）
+  \item \LaTeX を使ってる人に直接聞く
 \end{itemize}
 また、次のようなことを調べたいときは以下のサイトがおススメです
 \begin{itemize}
@@ -104,20 +125,17 @@ VSCodeの左下の歯車マークをクリックし、『設定』を開き、�
 \end{itemize}
 
 
-\subsection*{小節・段落}
-\subsection*{箇条書き}
-\subsection*{title}
+\subsection{小節・段落}
+\subsection{箇条書き}
 \section{数式の書き方}
 \section{図表の書き方}
 \section{応用}
 \subsection{文書が長くなりすぎて実行に時間がかかりすぎる問題}
 余裕で2桁ページに到達するような実験レポートを書いていると、pdf化に数十秒かかるようになってきます（PCのスペックによる？）これでは、今書いている内容が正しく表示されるか確認するだけで時間が過ぎ去っていくので、対策必須です。
-
-あああ
 \begin{itemize}
   \item[対策１] 編集する部分だけ取り出して、エラーを吐かなければメイン文書に統合
   \item[対策２] 分割して書けるパッケージ導入
 \end{itemize}
-対策１の方でも問題ないけれど、分割して書くシステムを作っておけば複数人での論文作成時にも応用できて便利です。
+対策1の方でも問題ないけれど、分割して書くシステムを作っておけば複数人での論文作成時にも応用できて便利です。（でも筆者は面倒なので対策1の方を使うことの方が多い現実）
 
 \end{document}
