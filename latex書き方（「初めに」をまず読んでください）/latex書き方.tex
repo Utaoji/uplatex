@@ -1,0 +1,155 @@
+\documentclass[uplatex,dvipdfmx]{jsarticle}
+%参考文献
+\usepackage[super]{cite}
+\usepackage{url}
+\renewcommand\citeform[1]{[#1]}
+
+% 数式
+\usepackage{amsthm,amsmath,amssymb,amsfonts}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{siunitx}
+
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+
+% 図形
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+% 自分用設定
+\newcommand{\Frac}[2]{\dfrac{\,#1\,}{\,#2\,}}
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{3}
+
+\usepackage{hyperref}
+
+\begin{document}
+\title{\LaTeX 書き方} 
+\author{うたおじ}
+\date{}
+\maketitle
+ここに本文を書きます。
+
+\tableofcontents
+\clearpage
+
+この上に書かれているコマンドは、目次作成用のコマンドです。必要に応じて本文の頭に書いて下さい。
+
+目次の終わりは改ページするのが自然でしょう。
+
+\section{文章の書き方}
+数式や図表の前に、日本語文（英語でも）の基本的な書き方を説明します。
+
+便宜上、pdf化するまえの、本文部分の文章のことを「ソース」ということにします。
+ソース上での
+改行
+は
+pdfにしたときは無視されます。そのためソース上では適当に改行することが推奨されます。
+
+では、pdf上で改行・改段落したいときはどうするか。\\と、バックスラッシュを2つ重ねると改行でき、
+
+一行開けて書くとそこで改段落されます。改段落では自動的にインデントされます。
+
+改ページしたいときは、バックスラッシュに続けてclearpage
+\clearpage
+とコマンドを入力します。
+
+コメントアウト（pdf上で非表示）するにはパーセントマーク（半角）を使います。ソース上で改行するまでコメントアウトは続きます。%こんな風に
+このように、バックスラッシュやパーセントはコマンドの合図になっているので、パーセント自体を使いたいときなどは\% \& \$ のようにバックスラッシュと併せて入力する必要があります。
+
+コマンドを入力するときは、末尾に半角スペースをわすれないように。（一部数式コマンド除く）どこまでがコマンドなのかの合図になります。
+
+\section{数式}
+\subsection{基本}
+インライン数式（文章中での数式）と、別行立て数式の２つに大きく分けられます。
+
+ドルマークの間がインライン数式環境です。$1+1=3$このように。
+
+別行立て数式は、次のように書きます。
+\begin{equation}
+  1+1=3
+\end{equation}
+equation環境内で、を複数行に分けたいときは次のようにします。アンドマークのところでそろえ、バックスラッシュ二つで改行です
+\begin{equation}\label{eq:式ラベル}
+  \begin{split}
+    1+1&=2\\
+    &=4-2
+  \end{split}
+\end{equation}
+場合分けなど、式を部分的に複数行にする場合は
+\begin{equation}
+  1+1= \left\{ 
+  \begin{aligned} 
+    2&=2\\
+    3-1&=5-3
+  \end{aligned}
+  \right.
+\end{equation}
+
+数式番号を相互参照しなきゃtexにした意味がないです。latelうんちゃらってやつが相互参照のラベルです。式\eqref{eq:式ラベル}のように書きます。『eqref』です。後述の図表などで使う『ref』は数式には向きません。
+
+ここで、カッコを表示させていますが、必ず$\left(1+2\right)$のように、leftとrightを同時に使います。
+
+カッコ閉じを表示したくないときは$\left\{1+2\right.$とすればよいです。（波カッコ以外でこれは動作しない気がする。検証してないから知らん）
+
+カッコのサイズは自動調整されるものの、自分で調整したいときは$\Biggl(2+2\Biggr) \bigl(1+1\bigr)$などです。まあ詳しくはググれ。
+
+よく使う数学記号やギリシャ文字は、左のTEXってアイコンをクリックしてサイドバーを表示させて、SNIPPET VIEWってところを探せばたぶんある。
+
+他にも色々環境が存在するけど、詳しくは下記サイトに書いてあります。でも上記のやつだけで大体十分。
+
+\href{https://mathlandscape.com/latex-eq/#toc3}{【LaTeX】数式環境まとめ【amsmath】}
+
+ほかにも色々あるけど、あげてたらきりがないので使いたいときにググれ。
+
+\subsection{単位表示}
+単位をつけるときはsiunixというパッケージを利用します。が、詳しいことを書くのはメンドウなので自分で調べてください。
+
+\section{図表}
+簡単にしか書いてないけど、ググれば色々出てくるから。。。
+\subsection{図}
+図は次のように表示させます。
+
+今はエラー防止のためコメントアウトしています。「ファイル名」という名称のpngファイルをこの資料と同じフォルダ内に用意したうえで、パーセントを削除してください!!
+%\begin{figure}[htbp]
+%  \centering
+%  \includegraphics[width=0.7\linewidth]{ファイル名.png}
+%  \caption{図タイトル}
+%  \label{fig:図ラベル}
+%\end{figure}
+0.7という数値は図の横幅を意味します。
+
+図のファイルは、ソース資料と同じフォルダにおいておくとよいです（別のフォルダの画像も持ってこれるけど、面倒）
+
+図番号の参照方法は数式と似ていて、\ref{fig:図ラベル}とします。（コメントアウトしている場合図番号が正常に表示されないはずです）
+\subsection{表}
+表は次のように表示させます。
+\begin{table}[htbp]
+  \centering
+  \caption{表タイトル}
+  \label{tab:TH}
+  \begin{tabular}{cS[table-format=+1.2e+3]S}\hline
+    {文字} & {時間とか$t / \si{s}$} & {温度とか$T / \si{K}$}\\ \hline
+    ああ & -1.3E1 & 3.745E2 \\
+    い & 2.43E2 & 2.854E3 \\
+    ううう & 4.3E323 & 1.114E4 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+excelのデータをlatex用の表記に変換してくれるサイトはたくさんあるので、ぜひ活用して楽をしてください。
+
+tabular直後のカッコ内(S[table-format=+1.2e+3]Sの部分)について、cは中央ぞろえ、Sはsiunix表示を意味します。
+
+[table-format=+1.1e+1]の部分は、符号付き、整数部分1桁、小数部分2桁、指数部分3桁を意味し、これがあると位置が全体でそろうように調整してくれます。
+
+温度の方はもともと全て桁数などが同じなのでSだけで十分です。あえて書くなら[table-format=1.3e+1]を加えることになります。（符号なしなので最初の+は不要）
+
+hlineは横線挿入です。
+\end{document}
